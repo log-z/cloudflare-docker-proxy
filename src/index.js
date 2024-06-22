@@ -11,7 +11,7 @@ const routes = {
   "quay.logz.vip": "https://quay.io",
   "gcr.logz.vip": "https://gcr.io",
   "k8s-gcr.logz.vip": "https://k8s.gcr.io",
-  "k8s.logz.vip": "https://registry.k8s.io",
+  "registry-k8s.logz.vip": "https://registry.k8s.io",
   "ghcr.logz.vip": "https://ghcr.io",
   "cloudsmith.logz.vip": "https://docker.cloudsmith.io",
 
