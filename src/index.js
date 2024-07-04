@@ -14,6 +14,7 @@ const routes = {
   "registry-k8s.logz.vip": "https://registry.k8s.io",
   "ghcr.logz.vip": "https://ghcr.io",
   "cloudsmith.logz.vip": "https://docker.cloudsmith.io",
+  "ecr.logz.vip": "https://public.ecr.aws",
 
   // staging
   "docker-staging.logz.vip": dockerHub,
