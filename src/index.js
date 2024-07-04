@@ -1,3 +1,5 @@
+import indexPage from './index.html'
+
 addEventListener("fetch", (event) => {
   event.passThroughOnException();
   event.respondWith(handleRequest(event.request));
@@ -32,6 +34,14 @@ function routeByHosts(host) {
 
 async function handleRequest(request) {
   const url = new URL(request.url);
+  if (url.pathname === '/') {
+    return new Response(indexPage, {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/html;charset=UTF-8',
+      },
+    })
+  }
   const upstream = routeByHosts(url.hostname);
   if (upstream === "") {
     return new Response(
