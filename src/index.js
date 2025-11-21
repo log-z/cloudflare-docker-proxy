@@ -44,7 +44,7 @@ async function handleRequest(request) {
         },
       })
     } else {
-      return Response.redirect(url.protocol + "//" + url.host + "/v2/", 301);
+      return Response.redirect(url.protocol + "//" + url.host + "/v2/", 302);
     }
   }
   const upstream = routeByHosts(url.hostname);
