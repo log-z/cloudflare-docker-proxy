@@ -35,7 +35,17 @@ function routeByHosts(host) {
 async function handleRequest(request) {
   const url = new URL(request.url);
   if (url.pathname == "/") {
-    return Response.redirect(url.protocol + "//" + url.host + "/v2/", 301);
+    const accept = request.headers.get("Accept")
+    if (accept && accept.includes("text/html")) {
+      return new Response(indexPage, {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/html;charset=UTF-8',
+        },
+      })
+    } else {
+      return Response.redirect(url.protocol + "//" + url.host + "/v2/", 301);
+    }
   }
   const upstream = routeByHosts(url.hostname);
   if (upstream === "") {
